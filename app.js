@@ -25,9 +25,9 @@ const initialize=()=>{
     mistakes=0;
     text.innerHTML="";
     timer=60;
-    let rand= Math.floor(Math.random()*4);
+    let rand= Math.floor(Math.random()*paragraph.length);
     while(rand==lastRand){
-       rand= Math.floor(Math.random()*4);
+       rand= Math.floor(Math.random()*paragraph.length);
     }
     lastRand=rand;
     spaned(rand);
@@ -76,7 +76,7 @@ function setTimer(){
 
 initialize();
 setTimer();
-setInterval("setTimer()",100);
+setInterval("setTimer()",1000);
 
 
 button.addEventListener("click",initialize);
