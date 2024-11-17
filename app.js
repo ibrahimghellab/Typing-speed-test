@@ -63,7 +63,6 @@ input.addEventListener("input",()=>{
         mistakesElement.textContent=`Mistakes : ${++mistakes}`;
     }
     if(chars[nb].innerText==" "){
-        console.log("ok");
         WPM.textContent= `WPM: ${++nbWords}`;
     }
     nb++;
@@ -82,4 +81,8 @@ setInterval("setTimer()",100);
 
 button.addEventListener("click",initialize);
 
+document.getElementById("text").addEventListener("click",()=>{
+    console.log("clicked")
+    document.getElementById("input").focus();
+})
 
