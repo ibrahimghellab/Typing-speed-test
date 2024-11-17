@@ -106,3 +106,10 @@ body {
         opacity: 1;
     }
 }
+
+.correct{
+    color: #2ecc71;
+}
+.false{
+    color: crimson;
+}
