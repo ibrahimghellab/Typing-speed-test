@@ -21,7 +21,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+input{
+    z-index: -999;
+    position:absolute;
+    opacity: 0;
+}
 body {
     background-color: var(--background-color);
     font-family: var(--font-family);
@@ -106,10 +110,7 @@ body {
         opacity: 1;
     }
 }
-input{
-    z-index: -999;
-    position:absolute;
-}
+
 
 .correct{
     color: #2ecc71;
