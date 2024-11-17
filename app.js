@@ -38,7 +38,9 @@ const initialize=()=>{
 function checkEnd(){
     if (timer<=0){
         timer=0;
+        input.disabled=true;
     }
+    
 }
 
 function spaned(rand){
@@ -70,6 +72,7 @@ input.addEventListener("input",()=>{
 
 function setTimer(){
     timerElement.textContent="Time : "+timer--;
+    checkEnd();
 }
 
 initialize();
