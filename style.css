@@ -106,6 +106,10 @@ body {
         opacity: 1;
     }
 }
+input{
+    z-index: -999;
+    position:absolute;
+}
 
 .correct{
     color: #2ecc71;
