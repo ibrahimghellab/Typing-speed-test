@@ -71,6 +71,7 @@ function spaned(rand){
 
 input.addEventListener("input",()=>{
     const chars=text.querySelectorAll("span");
+    chars[nb+1].classList.add("current");
     let temp=input.value;
     input.value="";
     if(temp===paragraphSplited[nb]){
