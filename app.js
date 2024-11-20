@@ -11,6 +11,7 @@ let mistakes=0;
 let correctAnswer=0;
 let nbWords=0;
 let firstIteration=0;
+let intervalId;
 const paragraph=[
     "In today's interconnected world, typing has become a fundamental skill, essential for communication and productivity. From crafting professional emails to completing academic assignments, the ability to type quickly and accurately is invaluable. It is no longer a specialized skill reserved for typists or secretaries but a requirement for virtually every career. Furthermore, the rise of remote work has placed even greater emphasis on digital communication tools, where typing efficiency directly impacts workflow. By mastering typing, individuals not only save time but also reduce the mental strain associated with slow or error-prone input.",
     "Typing as a practice has undergone a remarkable transformation over the past century. In the early 20th century, the clacking of typewriter keys was synonymous with office work, requiring physical effort and precision. With the advent of computers, the keyboard became a universal input tool, revolutionizing how information was processed and shared. Today, touchscreens and voice-to-text technologies coexist with traditional keyboards, offering new ways to input data. However, despite these advancements, the keyboard remains irreplaceable in many scenarios, making typing proficiency as relevant as ever.",
@@ -32,6 +33,8 @@ let paragraphSplited=0;
 let lastRand=-1;
 let timer=60;
 const initialize=()=>{
+    
+    timer=60;
     document.getElementById("input").focus();
     firstIteration=0;
     nb=0;
@@ -45,7 +48,6 @@ const initialize=()=>{
 
 
     text.innerHTML="";
-    timer=60;
     let rand= Math.floor(Math.random()*paragraph.length);
     while(rand==lastRand){
        rand= Math.floor(Math.random()*paragraph.length);
@@ -60,7 +62,6 @@ function checkEnd(){
     if (timer<=0){
         timer=0;
         input.disabled=true;
-        firstIteration++;
     }
     
 }
@@ -74,10 +75,12 @@ function spaned(rand){
 }
 
 input.addEventListener("input",()=>{
+    
     if(firstIteration==0){
+        clearInterval(intervalId);
         firstIteration++;
         setTimer();
-        setInterval("setTimer()",1000);
+        intervalId=setInterval("setTimer()",1000);
     }
     const chars=text.querySelectorAll("span");
     chars[nb].classList.remove("current");
