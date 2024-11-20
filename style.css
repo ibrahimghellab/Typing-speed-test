@@ -123,4 +123,14 @@ body {
 }
 .current{
     text-decoration: underline;
+    animation: animation--underline 1s ease infinite;
+    ;
+}
+
+
+@keyframes animation--underline{
+    50%{
+        opacity: 0;
+        background-color: aquamarine;
+    }
 }
