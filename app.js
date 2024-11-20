@@ -32,8 +32,10 @@ let paragraphSplited=0;
 let lastRand=-1;
 let timer=60;
 const initialize=()=>{
+    document.getElementById("input").focus();
+    firstIteration=0;
     nb=0;
-
+    input.disabled=false;
     mistakes=0;
     mistakesElement.textContent="Mistakes: "+0;
     correctAnswer=0;
@@ -100,7 +102,7 @@ function setTimer(){
     timerElement.textContent="Time: "+timer--;
     checkEnd();
 }
-
+document.getElementById("input").focus();
 initialize();
 
 
