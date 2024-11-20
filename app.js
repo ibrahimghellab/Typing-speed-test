@@ -10,13 +10,14 @@ let nb=0;
 let mistakes=0;
 let correctAnswer=0;
 let nbWords=0;
+let firstIteration=0;
 const paragraph=[
     "In today's interconnected world, typing has become a fundamental skill, essential for communication and productivity. From crafting professional emails to completing academic assignments, the ability to type quickly and accurately is invaluable. It is no longer a specialized skill reserved for typists or secretaries but a requirement for virtually every career. Furthermore, the rise of remote work has placed even greater emphasis on digital communication tools, where typing efficiency directly impacts workflow. By mastering typing, individuals not only save time but also reduce the mental strain associated with slow or error-prone input.",
     "Typing as a practice has undergone a remarkable transformation over the past century. In the early 20th century, the clacking of typewriter keys was synonymous with office work, requiring physical effort and precision. With the advent of computers, the keyboard became a universal input tool, revolutionizing how information was processed and shared. Today, touchscreens and voice-to-text technologies coexist with traditional keyboards, offering new ways to input data. However, despite these advancements, the keyboard remains irreplaceable in many scenarios, making typing proficiency as relevant as ever.",
     "Improving typing speed and accuracy requires a combination of practice, technique, and patience. Start by maintaining proper posture and hand placement on the keyboard. This minimizes strain and promotes efficiency. Using typing software or games designed to enhance muscle memory can make practice enjoyable and productive. Additionally, focus on minimizing errors rather than just typing faster—accuracy is often more beneficial than raw speed. Regular practice, combined with a focus on correcting common mistakes, can significantly enhance typing performance over time.",
     "Did you know that typing can positively affect mental health? The act of typing engages multiple cognitive processes, from motor skills to language comprehension. When done regularly, typing can improve focus and concentration, akin to meditative practices. For some, typing out thoughts or journaling digitally can serve as a therapeutic outlet, helping to organize emotions and reduce stress. Moreover, typing exercises designed to promote speed and accuracy can provide a sense of accomplishment, boosting confidence and motivation.",
     "Nature is a source of endless wonder and inspiration. From the towering peaks of snow-capped mountains to the gentle rustle of leaves in a forest, every aspect of the natural world offers a moment of tranquility. Watching a sunrise, with its radiant hues of orange and pink, reminds us of the beauty that exists all around us. Similarly, the rhythmic crashing of waves on a sandy shore has a calming effect on the mind. Exploring nature not only rejuvenates the body but also nourishes the soul, connecting us to something greater than ourselves.",
-    "Exercise is a cornerstone of a healthy lifestyle. Regular physical activity strengthens the heart, improves lung capacity, and boosts overall well-being. Whether it’s a brisk morning walk, a high-intensity workout at the gym, or a calming yoga session, exercise helps to reduce stress and improve mental clarity. Studies show that even 30 minutes of activity a day can lead to significant health benefits. Remember, staying active is not just about looking good—it’s about feeling good and maintaining long-term health.",
+    "Exercise is a cornerstone of a healthy lifestyle. Regular physical activity strengthens the heart, improves lung capacity, and boosts overall well-being. Whether it’s a brisk morning walk, a high-intensity workout at the gym, or a calming yoga session, exercise helps to reduce stress and improve mental clarity. Studies show that even 30 minutes of activity a day can lead to significant health benefits. Remember, staying active is not just about looking good it’s about feeling good and maintaining long-term health.",
     "Technology has transformed the way we live, work, and communicate. In the past century, we’ve moved from rotary phones to smartphones, from bulky desktop computers to sleek laptops. The internet has made the world a smaller place, connecting people across continents in seconds. Innovations like artificial intelligence and virtual reality are pushing the boundaries of what’s possible. While technology brings many conveniences, it also poses challenges, such as ensuring data privacy and managing screen time effectively.",
     "Cooking is more than just preparing food; it is an art form and an act of love. From carefully measuring ingredients to experimenting with spices, cooking allows us to express creativity while nourishing the body. Trying new recipes can be an exciting adventure, especially when incorporating flavors from different cultures. The smell of freshly baked bread or the sizzle of vegetables in a pan can evoke feelings of comfort and happiness. Sharing a home-cooked meal with loved ones creates lasting memories and strengthens bonds.",
     "Traveling opens the door to new experiences and broadens our perspectives. Visiting unfamiliar places allows us to immerse ourselves in different cultures, taste exotic cuisines, and meet people with unique stories. Whether exploring bustling city streets, hiking through rugged mountains, or relaxing on pristine beaches, travel brings a sense of adventure. It teaches us to embrace the unknown and adapt to new situations, leaving us with cherished memories and a deeper appreciation for the world.",
@@ -57,6 +58,7 @@ function checkEnd(){
     if (timer<=0){
         timer=0;
         input.disabled=true;
+        firstIteration++;
     }
     
 }
@@ -70,7 +72,11 @@ function spaned(rand){
 }
 
 input.addEventListener("input",()=>{
-    
+    if(firstIteration==0){
+        firstIteration++;
+        setTimer();
+        setInterval("setTimer()",1000);
+    }
     const chars=text.querySelectorAll("span");
     chars[nb].classList.remove("current");
     chars[nb+1].classList.add("current");
@@ -91,13 +97,12 @@ input.addEventListener("input",()=>{
 })
 
 function setTimer(){
-    timerElement.textContent="Time : "+timer--;
+    timerElement.textContent="Time: "+timer--;
     checkEnd();
 }
 
 initialize();
-setTimer();
-setInterval("setTimer()",1000);
+
 
 
 button.addEventListener("click",initialize);
