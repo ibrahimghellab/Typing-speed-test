@@ -1,16 +1,20 @@
-# 🎯 Typing Speed Test App
+# Typing Trainer 🖋️💻
 
-Welcome to the **Typing Speed Test App**! 🚀 This simple yet interactive project allows users to test their typing speed in a clean and modern UI. 💻
+Welcome to **Typing Trainer**, a fun and interactive web application designed to improve your typing speed and accuracy! 🚀 Whether you're a beginner or a seasoned typist, this project will challenge and enhance your typing skills. ✨
 
----
+## Features 🌟
+- **Randomized Practice Paragraphs** 📝  
+  Gain exposure to diverse topics with a new paragraph each session!  
 
-## ✨ Features
+- **Real-Time Feedback** ⏱️  
+  - Track your **WPM (Words Per Minute)** and **CPM (Characters Per Minute)**.  
+  - Get instant error feedback with a live mistake counter.  
 
-- 🖋 **Dynamic text rendering** for typing practice.
-- 🕒 **Time tracking** to measure your typing speed.
-- 📉 Tracks **errors** made during typing.
-- 🏆 **Performance metrics** displayed (WPM and CPM).
-- 🎨 Stylish design with animations for a modern experience.
+- **User-Friendly Interface** 🎨  
+  Intuitive design with animations and clear stats display for an engaging experience.  
+
+- **Keyboard Focus** 🎯  
+  Automatically focus on the input field to keep your typing uninterrupted.  
 
 ---
 
