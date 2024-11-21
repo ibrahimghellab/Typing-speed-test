@@ -95,7 +95,6 @@ input.addEventListener("input",()=>{
         intervalId=setInterval("setTimer()",1000);
     }
     const chars=text.querySelectorAll("span");
-    deleteWord(paragraphSplited,chars);
     chars[nb].classList.remove("current");
     chars[nb+1].classList.add("current");
     let temp=input.value;
