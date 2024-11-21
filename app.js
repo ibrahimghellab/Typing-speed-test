@@ -66,6 +66,19 @@ function checkEnd(){
     
 }
 
+
+function deleteWord(value,paragraphSplited,chars){
+    if(value=="Remove"){
+        for(let i=nb;i>0;i--){
+            if(paragraphSplited[i-1]!=" "){
+                chars[nb].classList.remove("correct");
+            }
+        }
+    }
+    
+}
+
+
 function spaned(rand){
     paragraph[rand].split("").forEach(span=>{
         let spanTag=`<span>${span}</span>`;
@@ -75,7 +88,6 @@ function spaned(rand){
 }
 
 input.addEventListener("input",()=>{
-    
     if(firstIteration==0){
         clearInterval(intervalId);
         firstIteration++;
@@ -83,6 +95,7 @@ input.addEventListener("input",()=>{
         intervalId=setInterval("setTimer()",1000);
     }
     const chars=text.querySelectorAll("span");
+    deleteWord(paragraphSplited,chars);
     chars[nb].classList.remove("current");
     chars[nb+1].classList.add("current");
     let temp=input.value;
