@@ -67,7 +67,7 @@ function checkEnd(){
 }
 
 
-function deleteWord(value,paragraphSplited,chars){
+/*function deleteWord(value,paragraphSplited,chars){
     if(value=="Remove"){
         for(let i=nb;i>0;i--){
             if(paragraphSplited[i-1]!=" "){
@@ -77,7 +77,7 @@ function deleteWord(value,paragraphSplited,chars){
     }
     
 }
-
+*/
 
 function spaned(rand){
     paragraph[rand].split("").forEach(span=>{
